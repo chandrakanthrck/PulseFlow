@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dataeng</groupId>
+    <artifactId>PulseFlow</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <!-- Modules -->
+    <modules>
+        <module>data-engineering-platform</module>
+        <module>ingestion-service</module>
+        <!-- Add more modules here -->
+    </modules>
+
+    <!-- Centralized Dependency Versions -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Boot Starter (Base for Spring Boot projects) -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>3.1.3</version>
+            </dependency>
+
+            <!-- Apache Spark Core -->
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-core_2.12</artifactId>
+                <version>3.5.0</version>
+            </dependency>
+
+            <!-- Add other common dependencies here -->
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- Build Plugins Management -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Spring Boot Maven Plugin -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>3.1.3</version>
+                </plugin>
+
+                <!-- Add other shared plugins here -->
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <!-- Project Properties -->
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+</project>
